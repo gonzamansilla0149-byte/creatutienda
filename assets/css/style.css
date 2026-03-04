@@ -1,3 +1,180 @@
+/* ================================= */
+/* RESET */
+/* ================================= */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:#f6f7fb;
+    color:#111;
+    line-height:1.5;
+}
+
+
+/* ================================= */
+/* VARIABLES */
+/* ================================= */
+
+:root{
+
+--color-primary:#111;
+--color-secondary:#666;
+
+--color-border:#e5e7eb;
+--color-bg:#f6f7fb;
+--color-card:#ffffff;
+
+--radius:12px;
+
+--shadow-sm:0 4px 10px rgba(0,0,0,0.04);
+--shadow-md:0 10px 20px rgba(0,0,0,0.06);
+
+}
+
+
+/* ================================= */
+/* CONTAINER */
+/* ================================= */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px;
+}
+
+
+/* ================================= */
+/* NAVBAR */
+/* ================================= */
+
+.navbar{
+    width:100%;
+    background:white;
+    border-bottom:1px solid var(--color-border);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.navbar-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+}
+
+
+/* ================================= */
+/* BUTTONS */
+/* ================================= */
+
+.btn{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:8px;
+    font-size:14px;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:var(--color-primary);
+    color:white;
+}
+
+.btn-secondary{
+    background:#e5e7eb;
+    color:#111;
+}
+
+
+/* ================================= */
+/* GRID SYSTEM */
+/* ================================= */
+
+.grid{
+    display:grid;
+    gap:20px;
+}
+
+.grid-2{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.grid-3{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.grid-4{
+    grid-template-columns:repeat(4,1fr);
+}
+
+
+/* ================================= */
+/* CARD */
+/* ================================= */
+
+.card{
+    background:white;
+    padding:24px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);
+}
+
+
+/* ================================= */
+/* TEXT UTILITIES */
+/* ================================= */
+
+.text-center{
+    text-align:center;
+}
+
+.text-muted{
+    color:#777;
+}
+
+
+/* ================================= */
+/* SPACING UTILITIES */
+/* ================================= */
+
+.mt-20{margin-top:20px;}
+.mt-40{margin-top:40px;}
+
+.mb-20{margin-bottom:20px;}
+.mb-40{margin-bottom:40px;}
+
 /* ===== SIDEBAR ===== */
 
 .sidebar{
@@ -384,179 +561,3 @@ footer a:hover{
     color:#111;
 }
 
-/* ================================= */
-/* RESET */
-/* ================================= */
-
-*,
-*::before,
-*::after{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:#f6f7fb;
-    color:#111;
-    line-height:1.5;
-}
-
-
-/* ================================= */
-/* VARIABLES */
-/* ================================= */
-
-:root{
-
---color-primary:#111;
---color-secondary:#666;
-
---color-border:#e5e7eb;
---color-bg:#f6f7fb;
---color-card:#ffffff;
-
---radius:12px;
-
---shadow-sm:0 4px 10px rgba(0,0,0,0.04);
---shadow-md:0 10px 20px rgba(0,0,0,0.06);
-
-}
-
-
-/* ================================= */
-/* CONTAINER */
-/* ================================= */
-
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:0 20px;
-}
-
-
-/* ================================= */
-/* NAVBAR */
-/* ================================= */
-
-.navbar{
-    width:100%;
-    background:white;
-    border-bottom:1px solid var(--color-border);
-    position:sticky;
-    top:0;
-    z-index:100;
-}
-
-.navbar-inner{
-    max-width:1200px;
-    margin:auto;
-    padding:18px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    font-size:20px;
-    font-weight:700;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:20px;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:#333;
-    font-size:14px;
-}
-
-
-/* ================================= */
-/* BUTTONS */
-/* ================================= */
-
-.btn{
-    display:inline-block;
-    padding:10px 18px;
-    border-radius:8px;
-    font-size:14px;
-    text-decoration:none;
-    cursor:pointer;
-}
-
-.btn-primary{
-    background:var(--color-primary);
-    color:white;
-}
-
-.btn-secondary{
-    background:#e5e7eb;
-    color:#111;
-}
-
-
-/* ================================= */
-/* GRID SYSTEM */
-/* ================================= */
-
-.grid{
-    display:grid;
-    gap:20px;
-}
-
-.grid-2{
-    grid-template-columns:repeat(2,1fr);
-}
-
-.grid-3{
-    grid-template-columns:repeat(3,1fr);
-}
-
-.grid-4{
-    grid-template-columns:repeat(4,1fr);
-}
-
-
-/* ================================= */
-/* CARD */
-/* ================================= */
-
-.card{
-    background:white;
-    padding:24px;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow-sm);
-}
-
-
-/* ================================= */
-/* TEXT UTILITIES */
-/* ================================= */
-
-.text-center{
-    text-align:center;
-}
-
-.text-muted{
-    color:#777;
-}
-
-
-/* ================================= */
-/* SPACING UTILITIES */
-/* ================================= */
-
-.mt-20{margin-top:20px;}
-.mt-40{margin-top:40px;}
-
-.mb-20{margin-bottom:20px;}
-.mb-40{margin-bottom:40px;}
