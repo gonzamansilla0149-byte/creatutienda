@@ -456,17 +456,42 @@ Plataforma SaaS para tiendas gastronómicas.
 
 </footer>
 
-  <div id="loginModal" class="modal">
+<div id="loginModal" class="modal">
 
-<div class="modal-content">
+<div class="modal-content auth-card">
 
 <h2>Iniciar sesión</h2>
 
-<input id="loginEmail" placeholder="Email">
+<input id="loginEmail" type="email" placeholder="Email">
+
+<input id="loginPassword" type="password" placeholder="Contraseña">
 
 <button id="loginSubmit" class="btn btn-primary">
-Entrar
+Iniciar sesión
 </button>
+
+<div class="auth-divider">
+<span>o</span>
+</div>
+
+<button class="btn btn-google" id="googleLogin">
+Continuar con Google
+</button>
+
+<div class="auth-links">
+
+<a id="forgotPassword">
+¿Olvidaste tu contraseña?
+</a>
+
+<p>
+¿No tienes cuenta?
+<a id="openRegisterFromLogin">
+Crear cuenta
+</a>
+</p>
+
+</div>
 
 </div>
 
@@ -475,15 +500,44 @@ Entrar
 
 <div id="registerModal" class="modal">
 
-<div class="modal-content">
+<div class="modal-content auth-card">
 
 <h2>Crear cuenta</h2>
 
-<input id="registerEmail" placeholder="Email">
+<input id="registerName" placeholder="Nombre">
+
+<input id="registerLastName" placeholder="Apellido">
+
+<input id="registerBirth" type="date" placeholder="Fecha de nacimiento">
+
+<input id="registerEmail" type="email" placeholder="Email">
+
+<input id="registerPassword" type="password" placeholder="Contraseña">
+
+<input id="registerPassword2" type="password" placeholder="Repetir contraseña">
 
 <button id="registerSubmit" class="btn btn-primary">
 Crear cuenta
 </button>
+
+<div class="auth-divider">
+<span>o</span>
+</div>
+
+<button class="btn btn-google" id="googleRegister">
+Registrarse con Google
+</button>
+
+<div class="auth-links">
+
+<p>
+¿Ya tienes cuenta?
+<a id="openLoginFromRegister">
+Iniciar sesión
+</a>
+</p>
+
+</div>
 
 </div>
 
