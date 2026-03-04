@@ -1,61 +1,350 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
-<title>Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | TuSaaS</title>
 
 <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
+
 <body>
 
-<div class="dashboard">
+
+<!-- SIDEBAR -->
 
 <aside class="sidebar">
 
-<h3>TuSaaS</h3>
+<div class="sidebar-header">
 
-<a href="#">Tiendas</a>
-<a href="#">Pedidos</a>
-<a href="#">Reportes</a>
-<a href="#">Configuración</a>
-
-</aside>
-
-
-<main class="dashboard-main">
-
-<div class="dashboard-header">
-
-<h1>Mis tiendas</h1>
-
-<a class="btn btn-primary">
-Nueva tienda
-</a>
+<h2>TuSaaS</h2>
 
 </div>
 
 
-<div class="card">
+<nav class="sidebar-nav">
 
-<table class="table">
+<a class="nav-item active">Dashboard</a>
+
+<a class="nav-item">Tiendas</a>
+
+<a class="nav-item">Pedidos</a>
+
+<a class="nav-item">Reportes</a>
+
+<a class="nav-item">MercadoPago</a>
+
+<a class="nav-item">Configuración</a>
+
+</nav>
+
+
+<div class="sidebar-footer">
+
+<p>v1.0</p>
+
+</div>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+
+<!-- TOPBAR -->
+
+<header class="topbar">
+
+<div class="topbar-left">
+
+<h1>Dashboard</h1>
+
+</div>
+
+
+<div class="topbar-right">
+
+<button class="btn-primary">
+Nueva tienda
+</button>
+
+<div class="user-menu">
+
+<div class="avatar"></div>
+
+<span>Usuario</span>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<!-- METRICS -->
+
+<section class="metrics">
+
+<div class="metric-card">
+
+<h4>Ventas hoy</h4>
+
+<p class="metric-value">$12.500</p>
+
+<span class="metric-sub">+12% vs ayer</span>
+
+</div>
+
+
+<div class="metric-card">
+
+<h4>Pedidos</h4>
+
+<p class="metric-value">24</p>
+
+<span class="metric-sub">últimas 24h</span>
+
+</div>
+
+
+<div class="metric-card">
+
+<h4>Tiendas activas</h4>
+
+<p class="metric-value">3</p>
+
+<span class="metric-sub">en tu cuenta</span>
+
+</div>
+
+
+<div class="metric-card">
+
+<h4>Ticket promedio</h4>
+
+<p class="metric-value">$520</p>
+
+<span class="metric-sub">últimos pedidos</span>
+
+</div>
+
+</section>
+
+
+
+<!-- STORES -->
+
+<section class="stores-section">
+
+<div class="section-header">
+
+<h2>Tus tiendas</h2>
+
+<button class="btn-secondary">
+Crear tienda
+</button>
+
+</div>
+
+
+<div class="stores-grid">
+
+<div class="store-card">
+
+<h3>Sabores</h3>
+
+<p class="store-url">
+sabores.tutienda.com
+</p>
+
+<div class="store-stats">
+
+<span>Pedidos: 12</span>
+
+<span>Hoy: $4500</span>
+
+</div>
+
+<div class="store-actions">
+
+<button class="btn-small">Ver tienda</button>
+
+<button class="btn-small">Configurar</button>
+
+</div>
+
+</div>
+
+
+<div class="store-card">
+
+<h3>Pizzería Roma</h3>
+
+<p class="store-url">
+roma.tutienda.com
+</p>
+
+<div class="store-stats">
+
+<span>Pedidos: 8</span>
+
+<span>Hoy: $3200</span>
+
+</div>
+
+<div class="store-actions">
+
+<button class="btn-small">Ver tienda</button>
+
+<button class="btn-small">Configurar</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ORDERS -->
+
+<section class="orders-section">
+
+<div class="section-header">
+
+<h2>Pedidos recientes</h2>
+
+<a class="link">Ver todos</a>
+
+</div>
+
+
+<div class="table-container">
+
+<table class="orders-table">
 
 <thead>
+
 <tr>
-<th>Tienda</th>
+
+<th>ID</th>
+
+<th>Cliente</th>
+
+<th>Total</th>
+
+<th>Pago</th>
+
 <th>Estado</th>
-<th>Pedidos</th>
+
+<th>Fecha</th>
+
 </tr>
+
 </thead>
+
 
 <tbody>
 
 <tr>
-<td>sabores</td>
-<td>Activa</td>
-<td>12</td>
+
+<td>#1021</td>
+
+<td>Juan Pérez</td>
+
+<td>$3200</td>
+
+<td>
+
+<span class="badge success">
+Aprobado
+</span>
+
+</td>
+
+<td>Completado</td>
+
+<td>12:10</td>
+
+</tr>
+
+
+<tr>
+
+<td>#1020</td>
+
+<td>María Gómez</td>
+
+<td>$1800</td>
+
+<td>
+
+<span class="badge pending">
+Pendiente
+</span>
+
+</td>
+
+<td>Esperando pago</td>
+
+<td>11:50</td>
+
+</tr>
+
+
+<tr>
+
+<td>#1019</td>
+
+<td>Lucas Díaz</td>
+
+<td>$2400</td>
+
+<td>
+
+<span class="badge success">
+Aprobado
+</span>
+
+</td>
+
+<td>Preparando</td>
+
+<td>11:32</td>
+
+</tr>
+
+
+<tr>
+
+<td>#1018</td>
+
+<td>Ana Torres</td>
+
+<td>$1500</td>
+
+<td>
+
+<span class="badge failed">
+Rechazado
+</span>
+
+</td>
+
+<td>Cancelado</td>
+
+<td>11:02</td>
+
 </tr>
 
 </tbody>
@@ -64,9 +353,55 @@ Nueva tienda
 
 </div>
 
-</main>
+</section>
+
+
+
+<!-- REPORTS -->
+
+<section class="reports-section">
+
+<div class="section-header">
+
+<h2>Reporte rápido</h2>
 
 </div>
+
+<div class="reports-grid">
+
+<div class="report-card">
+
+<h4>Ventas semana</h4>
+
+<p>$45.000</p>
+
+</div>
+
+
+<div class="report-card">
+
+<h4>Pedidos semana</h4>
+
+<p>86</p>
+
+</div>
+
+
+<div class="report-card">
+
+<h4>Mejor tienda</h4>
+
+<p>Sabores</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
 
 </body>
 </html>
