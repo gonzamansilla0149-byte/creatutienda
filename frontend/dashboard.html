@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CreaTuTienda | Crea tu tienda online en minutos</title>
+<title>Dashboard | TuSaaS</title>
 
 <link rel="stylesheet" href="../assets/css/style.css">
 
@@ -16,32 +16,72 @@
 <body>
 
 
+<!-- SIDEBAR -->
 
-<!-- NAVBAR -->
+<aside class="sidebar">
 
-<header class="navbar">
+<div class="sidebar-header">
 
-<div class="navbar-inner">
+<h2>TuSaaS</h2>
 
-<div class="logo">
-CreaTuTienda
 </div>
 
-<nav class="nav-links">
 
-<a href="#features">Features</a>
-<a href="#how">Cómo funciona</a>
-<a href="#pricing">Precios</a>
+<nav class="sidebar-nav">
 
-<a href="login.html">
-Login
-</a>
+<a class="nav-item active">Dashboard</a>
 
-<a href="login.html" class="btn btn-primary">
-Crear tienda
-</a>
+<a class="nav-item">Tiendas</a>
+
+<a class="nav-item">Pedidos</a>
+
+<a class="nav-item">Reportes</a>
+
+<a class="nav-item">MercadoPago</a>
+
+<a class="nav-item">Configuración</a>
 
 </nav>
+
+
+<div class="sidebar-footer">
+
+<p>v1.0</p>
+
+</div>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+
+<!-- TOPBAR -->
+
+<header class="topbar">
+
+<div class="topbar-left">
+
+<h1>Dashboard</h1>
+
+</div>
+
+
+<div class="topbar-right">
+
+<button class="btn-primary">
+Nueva tienda
+</button>
+
+<div class="user-menu">
+
+<div class="avatar"></div>
+
+<span>Usuario</span>
+
+</div>
 
 </div>
 
@@ -49,78 +89,50 @@ Crear tienda
 
 
 
-<!-- HERO -->
+<!-- METRICS -->
 
-<section class="hero">
+<section class="metrics">
 
-<div class="container">
+<div class="metric-card">
 
-<h1>
-Crea tu tienda online <br>
-y empieza a vender hoy
-</h1>
+<h4>Ventas hoy</h4>
 
-<p>
+<p class="metric-value">$12.500</p>
 
-Una plataforma simple para restaurantes y emprendimientos gastronómicos.  
-Recibe pedidos online y cobra con MercadoPago.
-
-</p>
-
-
-<div class="hero-actions">
-
-<a class="btn btn-primary" href="login.html">
-Crear mi tienda
-</a>
-
-<a class="btn btn-secondary" href="#demo">
-Ver demo
-</a>
+<span class="metric-sub">+12% vs ayer</span>
 
 </div>
 
 
-</div>
+<div class="metric-card">
 
-</section>
+<h4>Pedidos</h4>
 
+<p class="metric-value">24</p>
 
-
-<!-- SOCIAL PROOF -->
-
-<section class="section">
-
-<div class="container">
-
-<h2 class="section-title">
-Usado por negocios gastronómicos
-</h2>
-
-<div class="features-grid">
-
-<div class="feature-card">
-<h3>Restaurantes</h3>
-<p>
-Acepta pedidos online sin depender de apps externas.
-</p>
-</div>
-
-<div class="feature-card">
-<h3>Cafeterías</h3>
-<p>
-Recibe pedidos para retirar o delivery.
-</p>
-</div>
-
-<div class="feature-card">
-<h3>Dark kitchens</h3>
-<p>
-Centraliza pedidos y pagos desde un solo panel.
-</p>
-</div>
+<span class="metric-sub">últimas 24h</span>
 
 </div>
+
+
+<div class="metric-card">
+
+<h4>Tiendas activas</h4>
+
+<p class="metric-value">3</p>
+
+<span class="metric-sub">en tu cuenta</span>
+
+</div>
+
+
+<div class="metric-card">
+
+<h4>Ticket promedio</h4>
+
+<p class="metric-value">$520</p>
+
+<span class="metric-sub">últimos pedidos</span>
 
 </div>
 
@@ -128,252 +140,71 @@ Centraliza pedidos y pagos desde un solo panel.
 
 
 
-<!-- HOW IT WORKS -->
+<!-- STORES -->
 
-<section id="how" class="section">
+<section class="stores-section">
 
-<div class="container">
+<div class="section-header">
 
-<h2 class="section-title">
-Cómo funciona
-</h2>
+<h2>Tus tiendas</h2>
 
-<div class="steps">
-
-<div class="step">
-
-<div class="step-number">1</div>
-
-<h3>Crea tu tienda</h3>
-
-<p>
-Configura tu tienda en minutos desde el panel.
-</p>
+<button class="btn-secondary">
+Crear tienda
+</button>
 
 </div>
 
 
-<div class="step">
-
-<div class="step-number">2</div>
-
-<h3>Conecta MercadoPago</h3>
-
-<p>
-Recibe pagos directamente en tu cuenta.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<div class="step-number">3</div>
-
-<h3>Empieza a vender</h3>
-
-<p>
-Comparte tu tienda y recibe pedidos online.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- DEMO -->
-
-<section id="demo" class="section">
-
-<div class="container">
-
-<h2 class="section-title">
-Así se ve tu tienda
-</h2>
+<div class="stores-grid">
 
 <div class="store-card">
 
 <h3>Sabores</h3>
 
 <p class="store-url">
-sabores.creatutienda.com
+sabores.tutienda.com
 </p>
 
-<p>
+<div class="store-stats">
 
-Una tienda optimizada para pedidos online desde el celular.
+<span>Pedidos: 12</span>
 
-</p>
+<span>Hoy: $4500</span>
 
 </div>
 
-</div>
+<div class="store-actions">
 
-</section>
+<button class="btn-small">Ver tienda</button>
 
-
-
-<!-- FEATURES -->
-
-<section id="features" class="section">
-
-<div class="container">
-
-<h2 class="section-title">
-Todo lo que necesitas para vender online
-</h2>
-
-<div class="features-grid">
-
-<div class="feature-card">
-
-<h3>Pedidos online</h3>
-
-<p>
-Tus clientes pueden hacer pedidos fácilmente.
-</p>
+<button class="btn-small">Configurar</button>
 
 </div>
-
-
-<div class="feature-card">
-
-<h3>Pagos integrados</h3>
-
-<p>
-Acepta pagos con MercadoPago.
-</p>
-
-</div>
-
-
-<div class="feature-card">
-
-<h3>Panel de control</h3>
-
-<p>
-Administra pedidos y ventas desde tu dashboard.
-</p>
-
-</div>
-
-
-<div class="feature-card">
-
-<h3>Reportes</h3>
-
-<p>
-Consulta estadísticas de ventas en tiempo real.
-</p>
-
-</div>
-
-
-<div class="feature-card">
-
-<h3>Plantillas optimizadas</h3>
-
-<p>
-Tiendas rápidas y optimizadas para conversión.
-</p>
-
-</div>
-
-
-<div class="feature-card">
-
-<h3>Escalable</h3>
-
-<p>
-Ideal para restaurantes y dark kitchens.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- PRICING -->
-
-<section id="pricing" class="section">
-
-<div class="container">
-
-<h2 class="section-title">
-Precios simples
-</h2>
-
-<div class="stores-grid">
-
-<div class="store-card">
-
-<h3>Starter</h3>
-
-<p class="metric-value">
-$10 / mes
-</p>
-
-<p>
-1 tienda  
-Pedidos online  
-Panel de control
-</p>
-
-<a class="btn btn-primary">
-Empezar
-</a>
 
 </div>
 
 
 <div class="store-card">
 
-<h3>Pro</h3>
+<h3>Pizzería Roma</h3>
 
-<p class="metric-value">
-$25 / mes
+<p class="store-url">
+roma.tutienda.com
 </p>
 
-<p>
-Hasta 5 tiendas  
-Reportes avanzados  
-Soporte prioritario
-</p>
+<div class="store-stats">
 
-<a class="btn btn-primary">
-Empezar
-</a>
+<span>Pedidos: 8</span>
+
+<span>Hoy: $3200</span>
 
 </div>
 
+<div class="store-actions">
 
-<div class="store-card">
+<button class="btn-small">Ver tienda</button>
 
-<h3>Business</h3>
-
-<p class="metric-value">
-$49 / mes
-</p>
-
-<p>
-Tiendas ilimitadas  
-Analytics avanzado  
-Soporte dedicado
-</p>
-
-<a class="btn btn-primary">
-Empezar
-</a>
+<button class="btn-small">Configurar</button>
 
 </div>
 
@@ -385,77 +216,191 @@ Empezar
 
 
 
-<!-- CTA FINAL -->
+<!-- ORDERS -->
 
-<section class="cta">
+<section class="orders-section">
 
-<h2>
-Empieza a vender hoy
-</h2>
+<div class="section-header">
 
-<p>
-Crea tu tienda online en minutos.
-</p>
+<h2>Pedidos recientes</h2>
 
-<a class="btn btn-primary" href="login.html">
-Crear mi tienda
-</a>
+<a class="link">Ver todos</a>
+
+</div>
+
+
+<div class="table-container">
+
+<table class="orders-table">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Cliente</th>
+
+<th>Total</th>
+
+<th>Pago</th>
+
+<th>Estado</th>
+
+<th>Fecha</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+<tr>
+
+<td>#1021</td>
+
+<td>Juan Pérez</td>
+
+<td>$3200</td>
+
+<td>
+
+<span class="badge success">
+Aprobado
+</span>
+
+</td>
+
+<td>Completado</td>
+
+<td>12:10</td>
+
+</tr>
+
+
+<tr>
+
+<td>#1020</td>
+
+<td>María Gómez</td>
+
+<td>$1800</td>
+
+<td>
+
+<span class="badge pending">
+Pendiente
+</span>
+
+</td>
+
+<td>Esperando pago</td>
+
+<td>11:50</td>
+
+</tr>
+
+
+<tr>
+
+<td>#1019</td>
+
+<td>Lucas Díaz</td>
+
+<td>$2400</td>
+
+<td>
+
+<span class="badge success">
+Aprobado
+</span>
+
+</td>
+
+<td>Preparando</td>
+
+<td>11:32</td>
+
+</tr>
+
+
+<tr>
+
+<td>#1018</td>
+
+<td>Ana Torres</td>
+
+<td>$1500</td>
+
+<td>
+
+<span class="badge failed">
+Rechazado
+</span>
+
+</td>
+
+<td>Cancelado</td>
+
+<td>11:02</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
 
 </section>
 
 
 
-<!-- FOOTER -->
+<!-- REPORTS -->
 
-<footer>
+<section class="reports-section">
 
-<div class="container footer-grid">
+<div class="section-header">
 
-<div>
+<h2>Reporte rápido</h2>
 
-<h3>CreaTuTienda</h3>
+</div>
 
-<p>
-Plataforma SaaS para tiendas gastronómicas.
-</p>
+<div class="reports-grid">
+
+<div class="report-card">
+
+<h4>Ventas semana</h4>
+
+<p>$45.000</p>
 
 </div>
 
 
-<div>
+<div class="report-card">
 
-<h4>Producto</h4>
+<h4>Pedidos semana</h4>
 
-<a href="#">Features</a><br>
-<a href="#">Precios</a><br>
-<a href="#">Plantillas</a>
+<p>86</p>
 
 </div>
 
 
-<div>
+<div class="report-card">
 
-<h4>Soporte</h4>
+<h4>Mejor tienda</h4>
 
-<a href="#">Documentación</a><br>
-<a href="#">Contacto</a>
-
-</div>
-
-
-<div>
-
-<h4>Legal</h4>
-
-<a href="#">Términos</a><br>
-<a href="#">Privacidad</a>
+<p>Sabores</p>
 
 </div>
 
 </div>
 
-</footer>
+</section>
 
+
+</main>
 
 
 </body>
