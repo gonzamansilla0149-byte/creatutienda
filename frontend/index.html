@@ -33,11 +33,11 @@ CreaTuTienda
 <a href="#how">Cómo funciona</a>
 <a href="#pricing">Precios</a>
 
-<a href="login.html">
+<a id="loginBtn">
 Login
 </a>
 
-<a href="login.html" class="btn btn-primary">
+<a id="createStoreBtn" class="btn btn-primary">
 Crear tienda
 </a>
 
@@ -70,7 +70,7 @@ Recibe pedidos online y cobra con MercadoPago.
 
 <div class="hero-actions">
 
-<a class="btn btn-primary" href="login.html">
+<a class="btn btn-primary" id="createStoreHero">
 Crear mi tienda
 </a>
 
@@ -397,10 +397,10 @@ Empieza a vender hoy
 Crea tu tienda online en minutos.
 </p>
 
-<a class="btn btn-primary" href="login.html">
+<a class="btn btn-primary" id="createStoreCTA">
 Crear mi tienda
 </a>
-
+  
 </section>
 
 
@@ -456,7 +456,40 @@ Plataforma SaaS para tiendas gastronómicas.
 
 </footer>
 
+  <div id="loginModal" class="modal">
+
+<div class="modal-content">
+
+<h2>Iniciar sesión</h2>
+
+<input id="loginEmail" placeholder="Email">
+
+<button id="loginSubmit" class="btn btn-primary">
+Entrar
+</button>
+
+</div>
+
+</div>
 
 
+<div id="registerModal" class="modal">
+
+<div class="modal-content">
+
+<h2>Crear cuenta</h2>
+
+<input id="registerEmail" placeholder="Email">
+
+<button id="registerSubmit" class="btn btn-primary">
+Crear cuenta
+</button>
+
+</div>
+
+</div>
+
+<script type="module" src="../assets/js/app.js"></script>
+  
 </body>
 </html>
