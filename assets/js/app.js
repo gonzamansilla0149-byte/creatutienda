@@ -129,24 +129,13 @@ registerSubmit?.addEventListener("click", async () => {
 
     try{
 
-        const res = await fetch(`${API_BASE}/platform/register`,{
-
-            method:"POST",
-
-            headers:{
-                "Content-Type":"application/json"
-            },
-
-            body:JSON.stringify({
-                name,
-                lastName,
-                birth,
-                email,
-                password
-            })
-
-        })
-
+const data = await register({
+    name,
+    lastName,
+    birth,
+    email,
+    password
+})
         const data = await res.json()
 
         if(!data.userId){
@@ -184,36 +173,17 @@ loginSubmit?.addEventListener("click", async () => {
 
     try{
 
-        const res = await fetch(`${API_BASE}/platform/login`,{
-
-            method:"POST",
-
-            headers:{
-                "Content-Type":"application/json"
-            },
-
-            body:JSON.stringify({
-                email,
-                password
-            })
-
+        await login({
+            email,
+            password
         })
-
-        const data = await res.json()
-
-        if(!data.userId){
-            alert("Credenciales incorrectas")
-            return
-        }
-
-        setSession(data.userId)
 
         window.location.href = "dashboard.html"
 
     }catch(err){
 
         console.error(err)
-        alert("Error en login")
+        alert("Credenciales incorrectas")
 
     }
 
