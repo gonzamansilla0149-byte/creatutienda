@@ -18,8 +18,7 @@ const registerSubmit = document.getElementById("registerSubmit")
 // CONFIG API
 // ============================
 
-const API_BASE = "creatutienda.gonzamansilla0149.workers.dev/api"
-
+const API_BASE = "https://creatutienda.gonzamansilla0149.workers.dev/api"
 
 // ============================
 // SESIÓN
