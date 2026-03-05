@@ -50,7 +50,27 @@ function closeModals(){
     registerModal.style.display = "none"
 }
 
+// cerrar modal al hacer click fuera
+window.addEventListener("click", (event) => {
 
+    if(event.target === loginModal){
+        closeModals()
+    }
+
+    if(event.target === registerModal){
+        closeModals()
+    }
+
+})
+
+// cerrar modal con tecla ESC
+document.addEventListener("keydown", (event) => {
+
+    if(event.key === "Escape"){
+        closeModals()
+    }
+
+})
 // ============================
 // BOTONES LOGIN
 // ============================
@@ -89,16 +109,26 @@ createStoreCTA?.addEventListener("click", handleCreateStore)
 
 registerSubmit?.addEventListener("click", async () => {
 
+    const name = document.getElementById("registerName").value
+    const lastName = document.getElementById("registerLastName").value
+    const birth = document.getElementById("registerBirth").value
     const email = document.getElementById("registerEmail").value
+    const password = document.getElementById("registerPassword").value
+    const password2 = document.getElementById("registerPassword2").value
 
-    if(!email){
-        alert("Ingresa un email")
+    if(!email || !password){
+        alert("Completa los campos")
+        return
+    }
+
+    if(password !== password2){
+        alert("Las contraseñas no coinciden")
         return
     }
 
     try{
 
-        const res = await fetch(`${API_BASE}/platform/user`,{
+        const res = await fetch(`${API_BASE}/platform/register`,{
 
             method:"POST",
 
@@ -107,12 +137,21 @@ registerSubmit?.addEventListener("click", async () => {
             },
 
             body:JSON.stringify({
-                email
+                name,
+                lastName,
+                birth,
+                email,
+                password
             })
 
         })
 
         const data = await res.json()
+
+        if(!data.userId){
+            alert("Error creando usuario")
+            return
+        }
 
         setSession(data.userId)
 
@@ -132,21 +171,49 @@ registerSubmit?.addEventListener("click", async () => {
 // LOGIN (simple)
 // ============================
 
-loginSubmit?.addEventListener("click", () => {
+loginSubmit?.addEventListener("click", async () => {
 
     const email = document.getElementById("loginEmail").value
+    const password = document.getElementById("loginPassword").value
 
-    if(!email){
-        alert("Ingresa un email")
+    if(!email || !password){
+        alert("Completa email y contraseña")
         return
     }
 
-    /*
-    En el futuro:
-    buscar usuario por email
-    generar token
-    */
+    try{
 
-    alert("Login aún no implementado. Usa 'Crear cuenta'.")
+        const res = await fetch(`${API_BASE}/platform/login`,{
+
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+
+            body:JSON.stringify({
+                email,
+                password
+            })
+
+        })
+
+        const data = await res.json()
+
+        if(!data.userId){
+            alert("Credenciales incorrectas")
+            return
+        }
+
+        setSession(data.userId)
+
+        window.location.href = "dashboard.html"
+
+    }catch(err){
+
+        console.error(err)
+        alert("Error en login")
+
+    }
 
 })
