@@ -14,13 +14,6 @@ const registerModal = document.getElementById("registerModal")
 const loginSubmit = document.getElementById("loginSubmit")
 const registerSubmit = document.getElementById("registerSubmit")
 
-
-// ============================
-// CONFIG API
-// ============================
-
-const API_BASE = "https://creatutienda.gonzamansilla0149.workers.dev/api"
-
 // ============================
 // SESIÓN
 // ============================
@@ -28,11 +21,6 @@ const API_BASE = "https://creatutienda.gonzamansilla0149.workers.dev/api"
 function getSession(){
     return localStorage.getItem("userId")
 }
-
-function setSession(userId){
-    localStorage.setItem("userId", userId)
-}
-
 
 // ============================
 // MODALS
@@ -129,21 +117,18 @@ registerSubmit?.addEventListener("click", async () => {
 
     try{
 
-const data = await register({
-    name,
-    lastName,
-    birth,
-    email,
-    password
-})
-        const data = await res.json()
+        const data = await register({
+            name,
+            lastName,
+            birth,
+            email,
+            password
+        })
 
         if(!data.userId){
             alert("Error creando usuario")
             return
         }
-
-        setSession(data.userId)
 
         window.location.href = "dashboard.html"
 
