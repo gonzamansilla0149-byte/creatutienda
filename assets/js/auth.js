@@ -7,7 +7,7 @@ import { api } from "/assets/js/api.js"
 
 export async function register({ name, lastName, birth, email, password }) {
 
-    const data = await api("/platform/register", {
+    const data = await api("/api/platform/register", {
         method: "POST",
         body: JSON.stringify({
             name,
@@ -30,7 +30,7 @@ export async function register({ name, lastName, birth, email, password }) {
 
 export async function login({ email, password }) {
 
-    const data = await api("/platform/login", {
+    const data = await api("/api/platform/login", {
         method: "POST",
         body: JSON.stringify({
             email,
