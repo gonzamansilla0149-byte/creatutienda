@@ -64,8 +64,10 @@ document.addEventListener("keydown", (event) => {
 // BOTONES LOGIN
 // ============================
 
-loginBtn?.addEventListener("click", openLogin)
-
+loginBtn?.addEventListener("click", (e) => {
+e.preventDefault()
+openLogin()
+})
 
 // ============================
 // BOTONES CREAR TIENDA
@@ -87,10 +89,20 @@ function handleCreateStore(){
 
 }
 
-createStoreBtn?.addEventListener("click", handleCreateStore)
-createStoreHero?.addEventListener("click", handleCreateStore)
-createStoreCTA?.addEventListener("click", handleCreateStore)
+createStoreBtn?.addEventListener("click", (e)=>{
+e.preventDefault()
+handleCreateStore()
+})
 
+createStoreHero?.addEventListener("click", (e)=>{
+e.preventDefault()
+handleCreateStore()
+})
+
+createStoreCTA?.addEventListener("click", (e)=>{
+e.preventDefault()
+handleCreateStore()
+})
 
 // ============================
 // REGISTER
