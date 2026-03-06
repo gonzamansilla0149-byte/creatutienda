@@ -1,4 +1,5 @@
 import { register, login } from "/assets/js/auth.js"
+document.addEventListener("DOMContentLoaded", () => {
 // ============================
 // ELEMENTOS
 // ============================
@@ -185,3 +186,4 @@ loginSubmit?.addEventListener("click", async () => {
     }
 
 })
+    })
