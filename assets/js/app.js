@@ -1,4 +1,4 @@
-import { register, login } from "./auth.js"
+import { register, login } from "/assets/js/auth.js"
 // ============================
 // ELEMENTOS
 // ============================
