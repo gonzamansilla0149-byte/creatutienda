@@ -43,11 +43,11 @@ if(!path.startsWith("/api/")){
 
 if(subdomain && subdomain !== "www" && subdomain !== "creatutienda"){
 
-const storeId = await env.INDEX.get(`store:slug:${subdomain}`)
+const storeId = await env.SAAS_KV.get(`store:slug:${subdomain}`)
 
 if(storeId){
 
-const store = await env.STORES.get(`store:${storeId}`,"json")
+const store = await env.SAAS_KV.get(`store:${storeId}`,"json")
 
 return new Response(JSON.stringify(store.config),{
 headers:{
@@ -149,7 +149,7 @@ if(!userId || !slug){
 return json({error:"Missing userId or slug"},400)
 }
 
-const existing = await env.INDEX.get(`store:slug:${slug}`)
+const existing = await env.SAAS_KV.get(`store:slug:${slug}`)
 
 if(existing){
 return json({error:"Slug already exists"},409)
@@ -166,7 +166,7 @@ config:config || {},
 createdAt:Date.now()
 }
 
-await env.STORES.put(`store:${storeId}`,JSON.stringify(store))
+await env.SAAS_KV.put(`store:${storeId}`,JSON.stringify(store))
 
 await env.SAAS_KV.put(`store:slug:${slug}`,storeId)
 
@@ -192,7 +192,7 @@ if(!userId){
 return json({error:"Missing userId"},400)
 }
 
-const storeIds = await env.USERS.get(`user:stores:${userId}`,"json") || []
+const storeIds = await env.SAAS_KV.get(`user:stores:${userId}`,"json") || []
 
 const stores = []
 
@@ -218,7 +218,7 @@ if(path.startsWith("/api/store/")){
 
 const slug = path.split("/")[3]
 
-const storeId = await env.INDEX.get(`store:slug:${slug}`)
+const storeId = await env.SAAS_KV.get(`store:slug:${slug}`)
 
 if(!storeId){
 return json({error:"Store not found"},404)
