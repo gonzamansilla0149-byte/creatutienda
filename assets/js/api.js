@@ -1,4 +1,4 @@
-const API_BASE = "https://creatutienda.gonzamansilla0149.workers.dev/api"
+const API_BASE = "https://creatutienda.gonzamansilla0149.workers.dev"
 
 export async function api(path, options = {}) {
 
