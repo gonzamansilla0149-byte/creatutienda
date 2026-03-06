@@ -49,11 +49,17 @@ if(storeId){
 
 const store = await env.SAAS_KV.get(`store:${storeId}`,"json")
 
+if(store){
 return new Response(JSON.stringify(store.config),{
 headers:{
 "Content-Type":"application/json"
 }
 })
+}
+
+}
+
+}
 
 }
 
