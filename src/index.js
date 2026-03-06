@@ -75,7 +75,7 @@ if(!email || !password){
 return json({error:"Missing email or password"},400)
 }
 
-const existing = await env.INDEX.get(`user:email:${email}`)
+const existing = await env.SAAS_KV.get(`user:email:${email}`)
 
 if(existing){
 return json({error:"User already exists"},409)
@@ -95,9 +95,9 @@ birth,
 createdAt:Date.now()
 }
 
-await env.USERS.put(`user:${userId}`,JSON.stringify(user))
+await env.SAAS_KV.put(`user:${userId}`,JSON.stringify(user))
 
-await env.INDEX.put(`user:email:${email}`,userId)
+await env.SAAS_KV.put(`user:email:${email}`,userId)
 
 return json({userId})
 
@@ -113,13 +113,13 @@ const body = await request.json()
 
 const {email,password} = body
 
-const userId = await env.INDEX.get(`user:email:${email}`)
-
+const userId = await env.SAAS_KV.get(`user:email:${email}`)
+  
 if(!userId){
 return json({error:"Invalid credentials"},401)
 }
 
-const user = await env.USERS.get(`user:${userId}`,"json")
+const user = await env.SAAS_KV.get(`user:${userId}`,"json")
 
 if(!user){
 return json({error:"Invalid credentials"},401)
@@ -168,14 +168,14 @@ createdAt:Date.now()
 
 await env.STORES.put(`store:${storeId}`,JSON.stringify(store))
 
-await env.INDEX.put(`store:slug:${slug}`,storeId)
+await env.SAAS_KV.put(`store:slug:${slug}`,storeId)
 
-let userStores = await env.USERS.get(`user:stores:${userId}`,"json") || []
+let userStores = await env.SAAS_KV.get(`user:stores:${userId}`,"json") || []
 
 userStores.push(storeId)
 
-await env.USERS.put(`user:stores:${userId}`,JSON.stringify(userStores))
-
+await env.SAAS_KV.put(`user:stores:${userId}`,JSON.stringify(userStores))
+  
 return json({storeId,slug})
 
 }
@@ -198,7 +198,7 @@ const stores = []
 
 for(const id of storeIds){
 
-const store = await env.STORES.get(`store:${id}`,"json")
+const store = await env.SAAS_KV.get(`store:${id}`,"json")
 
 if(store){
 stores.push(store)
@@ -224,7 +224,7 @@ if(!storeId){
 return json({error:"Store not found"},404)
 }
 
-const store = await env.STORES.get(`store:${storeId}`,"json")
+const store = await env.SAAS_KV.get(`store:${storeId}`,"json")
 
 return json(store.config)
 
